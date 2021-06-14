@@ -1,0 +1,86 @@
+#!/bin/bash
+
+echo "-----------------STAGE I-------------------------"
+
+#1
+echo "~SI_Task 1~"
+if [ -z "$ORACLE_HOME" ]
+	then echo "There is no environment variable \"ORACLE_HOME\""
+	else echo "ORACLE_HOME is set up, it's value = $ORACLE_HOME"
+fi
+echo -e "\n"
+
+#2
+echo "~SI_Task 2~"
+export TEST_VAR=test
+echo $TEST_VAR
+echo -e "\n"
+
+#3
+echo "~SI_Task3~"
+echo "1.Top - process monitoring tool, as ps but has repetetive update"
+echo "2.Netstat - shows network statistics"
+echo "3.ps - report snapshot of the current processes"
+echo "4.vmstat - virtual memmory statistics"
+echo "5.w - shows list of who is logged on"
+echo "6.uptime - shows how long system is running"
+echo "7.free - shows memory usage"
+echo -e "\n"
+
+#4
+ps -u user
+
+
+echo "-----------------STAGE II-------------------------"
+
+#1
+echo "~SII_Task1~"
+find ./example/ -maxdepth 1 -name "*.sh" | xargs ls -t
+echo -e '\n'
+#2
+echo "~SII_Task2~"
+find ./example/ -maxdepth 1 -name "*.sh" | xargs chmod u+x 
+echo -e '\n'
+#3
+echo "~SII_Task3~"
+find ./example/ -maxdepth 1 -name "*.cfg" -print0
+echo -e '\n'
+#4
+echo "~SII_Task4~"
+cat ./example/test.log | tail -25
+echo -e '\n'
+#5
+echo "~SII_Task5~"
+cat ./example/test.log | head -25
+echo -e '\n'
+#6
+echo "~SII_Task6~"
+sed -n '25p' ./example/test.log
+echo -e '\n'
+#7
+echo "~SII_Task7~"
+find ./example/ -maxdepth 1 -name "*trash*" -exec mv -t ./tmp/ {} +
+echo -e '\n'
+#8
+echo "~SII_Task8~"
+find ./example/ -maxdepth 1 -name "*trash*" -exec cp -t ./tmp/ {} +
+echo -e '\n'
+
+echo "-----------------STAGE III-------------------------"
+
+#1
+echo "~SIII_Task1~"
+grep -r -l "test_mark" ./example/
+echo -e '\n'
+#2
+echo "~SIII_Task2~"
+find ./example/ -name "*.log" -size +10M -mtime -2
+echo -e '\n'
+#3
+echo "~SIII_Task3~"
+echo -n "" > ./example/test.log
+echo -e '\n'
+#4
+echo "~SIII_Task4~"
+find ./example/ -name "*.log" -mtime +30 -exec zip -m zippedFiles.zip '{}' ';'
+echo -e '\n'
