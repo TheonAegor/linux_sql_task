@@ -11,4 +11,4 @@ SQL
 получится установить ПО, переписать решение в синтаксисе oracle.
 
   Assumptions:
-    Мной была создана БД prm, в которой я создал таблицы prm_future_retail, prm_zone_future_retail, prm_zone_location.
+    Мной была создана БД rpm, в которой я создал таблицы prm_future_retail, prm_zone_future_retail, prm_zone_location.
